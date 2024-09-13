@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
+const mongoose = require("mongoose");
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-const { User} = require('../model/User.js');
+const  User = require('../model/User.js');
 const { sendEmailActivation} = require('./sendEmailConfimation.js')
 require('dotenv').config();
 
@@ -24,7 +25,9 @@ async function registerUser(req, res, next){
         });
         await user.save();
 // generating the email confirmation
+        console.log(user)
         const registeredUser = await User.findOne({username: username});
+
         const accessToken = generateUserToken({userId: registeredUser._id})
         const refreshToken = jwt.sign({ userId: registeredUser._id }, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '15m'});
         const verificationLink = `http://localhost:5173/verify-token/${refreshToken}`
