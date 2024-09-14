@@ -57,7 +57,7 @@ async function loginUser(req, res, next){
             res.status(401).json({error: "The password is incorrect"})
         } else {
             const accessToken = generateUserToken({ userId: user._id }); 
-            const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '15s'});
+            const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET, {expiresIn: '15m'});
             res.status(200).json({accessToken: accessToken, refreshToken: refreshToken});     
             }
         }
