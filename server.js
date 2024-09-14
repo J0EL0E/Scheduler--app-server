@@ -22,7 +22,7 @@ const port = process.env.API_SERVER_URL || 3000;
 
 async function connectDB () {
     try{
-        await mongoose.connect( process.env.DB_URI );
+        await mongoose.connect( 'mongodb+srv://process.env.DB_USER:process.env.DB_PASSWORD@schedulerappcluster.ia2gb.mongodb.net' );
         console.log('Connected to MongoDB');
     }catch(err){
         console.log(err)
