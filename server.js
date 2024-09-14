@@ -22,9 +22,8 @@ const port = process.env.API_SERVER_URL || 3000;
 
 async function connectDB () {
     try{
-        await mongoose.connect( process.env.DB_URI , () => {
-            console.log(`MongoDB Connected`);
-        })
+        await mongoose.connect( process.env.DB_URI );
+        console.log('Connected to MongoDB');
     }catch(err){
         console.log(err)
     }
