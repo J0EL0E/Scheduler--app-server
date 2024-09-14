@@ -22,7 +22,7 @@ const port = process.env.API_SERVER_URL || 3000;
 
 async function connectDB () {
     try{
-        await mongoose.connect( process.env.DB_URI || 'http://localhost:27017' , {
+        await mongoose.connect( process.env.DB_URI  , {
             serverSelectionTimeoutMS: 10000 
     });
         console.log(`MongoDB Connected`);
