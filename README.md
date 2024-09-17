@@ -1,0 +1,5 @@
+The backend server for the Event Management System is built using Node.js and Express, providing a robust and scalable API for managing event-related data. 
+It utilizes MongoDB as the database to store and retrieve event information, user profiles, ticket bookings, and more.
+MongoDB’s flexible schema makes it ideal for handling the dynamic nature of events, allowing for easy scalability as the platform grows. Express serves as the core framework for handling routes, middleware, and API endpoints, making it efficient to manage both attendee and organizer requests.
+The server includes features like authentication, event filtering, booking logic, and payment integrations. For seamless deployment and scalability, the backend is hosted on Vercel, offering a serverless architecture that ensures quick, reliable access to the API with automatic scaling and continuous integration capabilities. 
+This setup provides a streamlined, production-ready environment, enabling efficient updates and version control.
